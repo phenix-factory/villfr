@@ -4,7 +4,6 @@
         #SET_MERGE{villefr, #ARRAY{#ID_VILLES_FRANCE, #NOM}}
     </BOUCLE_villefr>
 
-    <INCLURE{fond=saisies/selection, env, datas=#GET{villefr}} />
-
+    <INCLURE{fond=saisies/selection, env, datas=#GET{villefr}, attributs=data-placeholder="<:villefr:selection_ville:>"} />
     </B_villefr>
 </div>
