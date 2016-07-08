@@ -19,6 +19,7 @@
 	<pipeline nom="declarer_tables_interfaces" inclure="base/villefr.php" />
 	<pipeline nom="declarer_tables_auxiliaires" inclure="base/villefr.php" />
 
+  <necessite nom="spip_bonux" compatibilite="[3.2.0;]" />
 	<utilise nom="gis" compatibilite="[4.36.5;]" />
 
 </paquet>
