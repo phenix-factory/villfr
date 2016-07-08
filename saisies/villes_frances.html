@@ -1,6 +1,10 @@
+<div>
 #SET{villefr, #ARRAY}
 <BOUCLE_villefr(VILLES_FRANCES){si #ENV{region}|oui|ou{#ENV{departement}|oui}}{region ?}{departement ?}{par num nom, nom}{recherche?}{tout}>
     #SET_MERGE{villefr, #ARRAY{#ID_VILLES_FRANCE, #NOM}}
 </BOUCLE_villefr>
 
 <INCLURE{fond=saisies/selection, env, datas=#GET{villefr}} />
+
+</B_villefr>
+</div>
