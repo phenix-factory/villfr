@@ -1,0 +1,24 @@
+<paquet
+	prefix="villefr"
+	categorie="navigation"
+	version="1.0.0"
+	etat="dev"
+	compatibilite="[3.0.0;3.1.*]"
+	logo="prive/themes/spip/images/villefr-64.png"
+	documentation=""
+	schema="1.0.0"
+>
+	<nom>Villes de France</nom>
+
+	<auteur lien='http://p.henix.be'>Phenix</auteur>
+
+	<licence>GNU/GPL</licence>
+	<necessite nom="saisies" compatibilite="[2.0.3;]" />
+
+	<pipeline nom="declarer_tables_objets_sql" inclure="base/villefr.php" />
+	<pipeline nom="declarer_tables_interfaces" inclure="base/villefr.php" />
+	<pipeline nom="declarer_tables_auxiliaires" inclure="base/villefr.php" />
+
+	<utilise nom="gis" compatibilite="[4.36.5;]" />
+
+</paquet>

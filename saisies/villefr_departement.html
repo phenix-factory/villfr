@@ -1,0 +1,6 @@
+#SET{departement, #ARRAY}
+<BOUCLE_departement(VILLES_FRANCES){fusion departement}>
+    #SET_PUSH{departement, #DEPARTEMENT}
+</BOUCLE_departement>
+
+[(#GET{departement}|var_dump)]
