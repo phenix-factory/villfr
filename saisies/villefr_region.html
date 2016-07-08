@@ -1,0 +1,6 @@
+#SET{region, #ARRAY}
+<BOUCLE_region(VILLES_FRANCES){fusion region}>
+    #SET_PUSH{region, #REGION}
+</BOUCLE_region>
+
+<INCLURE{fond=saisies/selection, env, datas=#GET{region}} />

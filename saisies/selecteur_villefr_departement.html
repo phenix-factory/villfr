@@ -1,0 +1,16 @@
+<INCLURE{fond=saisies/villefr_departement, env, nom=#ENV{id,#ENV{nom}}_departement} />
+
+<script type="text/javascript">
+
+ // On va recharger le sélécteur des ville en fonction du département choisis
+ $(function() {
+     var champ = $("\#champ_[(#ENV{id,#ENV{nom}}|saisie_nom2classe)]_departement");
+
+     champ.on("change", function () {
+         var valeur = champ.val();
+         ajaxReload('villefr', {args: {departement: valeur}})
+     });
+ });
+</script>
+
+<INCLURE{fond=saisies/villes_frances, env, ajax=villefr} />
