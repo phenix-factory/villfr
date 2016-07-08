@@ -1,13 +1,6 @@
-[(#ENV{multiple}|oui)
-	[(#SET{valeur,[(#ENV*{valeur}|is_array|?{[(#ENV*{valeur})],[(#ENV*{valeur}|explode{','})]})]})]
-]
-<select name="#ENV{nom}[(#ENV{multiple}|?{\[\]})]" id="champ_[(#ENV{nom}|saisie_nom2classe)]"[ class="(#ENV{class})"][(#ENV{multiple}|oui) multiple="multiple" size="#ENV{size,10}"][ disabled="(#ENV{disable})"]>
-	[(#ENV{cacher_option_intro}|ou{#ENV{multiple}}|non)
-		<option value="">[(#ENV{option_intro})]</option>]
-	<BOUCLE_villes_belges(VILLES_FRANCES){region ?}{departement ?}{par num nom, nom}{recherche?}{tout}>
-		[(#ENV{multiple}|oui)
-		<option value="#ID_VILLES_FRANCE"[(#ID_VILLES_FRANCE|in_array{#ENV{valeur_forcee,#GET{valeur,#ENV{defaut,#ARRAY}}}}|oui) selected="selected"]>#NOM \(#CODE_POSTAL #REGION\)</option>]
-		[(#ENV{multiple}|non)
-		<option value="#ID_VILLES_FRANCE"[(#ID_VILLES_FRANCE|=={#ENV{valeur_forcee,#ENV{valeur,#ENV{defaut}}}}|oui) selected="selected"]>#NOM \(#CODE_POSTAL #REGION\)</option>]
-	</BOUCLE_villes_belges>
-</select>
+#SET{villefr, #ARRAY}
+<BOUCLE_villefr(VILLES_FRANCES){si #ENV{region}|oui|ou{#ENV{departement}|oui}}{region ?}{departement ?}{par num nom, nom}{recherche?}{tout}>
+    #SET_MERGE{villefr, #ARRAY{#ID_VILLES_FRANCE, #NOM}}
+</BOUCLE_villefr>
+
+<INCLURE{fond=saisies/selection, env, datas=#GET{villefr}} />
