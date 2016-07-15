@@ -4,7 +4,7 @@ if (!defined("_ECRIRE_INC_VERSION")) return;
 
 function peupler_base_villefr() {
     sql_query("
-    INSERT INTO `spip_villes_frances` (`id_villes_france`, `code_postal`, `nom`, `region`, `departement`, `lon`, `lat`) VALUES
+    INSERT INTO `spip_villes_frances` (`id_villes_france`, `code_postal`, `nom`, `region`, `departement`, `lat`, `lon`) VALUES
     (1,	1500,	'Ambérieu-en-Bugey',	'RHONE-ALPES',	'Ain',	45.9799,	5.33689),
     (2,	1330,	'Ambérieux-en-Dombes',	'RHONE-ALPES',	'Ain',	45.9981,	4.9025),
     (3,	1300,	'Ambléon',	'RHONE-ALPES',	'Ain',	45.7499,	5.60133),

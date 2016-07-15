@@ -51,8 +51,8 @@ function villefr_declarer_tables_objets_sql($tables) {
 			'nom'                => "varchar(255) NOT NULL DEFAULT ''",
 			'region'           => "varchar(255) NOT NULL DEFAULT ''",
 			'departement'           => "varchar(255) NOT NULL DEFAULT ''",
-			'lon' => 'double NULL NULL',
 			'lat' => 'double NULL NULL',
+			'lon' => 'double NULL NULL',
 		),
 		'key' => array(
 			'PRIMARY KEY'        => 'id_villes_france',
