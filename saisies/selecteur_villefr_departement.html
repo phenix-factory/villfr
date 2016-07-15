@@ -1,4 +1,8 @@
-<INCLURE{fond=saisies/villefr_departement, env, nom=#ENV{id,#ENV{nom}}_departement} />
+<BOUCLE_departement(VILLES_FRANCES){id_villes_france=#VALEUR}>
+    #SET{departement, #DEPARTEMENT}
+</BOUCLE_departement>
+
+<INCLURE{fond=saisies/villefr_departement, env, nom=#ENV{id,#ENV{nom}}_departement, valeur=#GET{departement}} />
 
 <script type="text/javascript">
 
