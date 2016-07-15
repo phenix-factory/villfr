@@ -9,8 +9,9 @@
  * @package    SPIP\Villefr\Pipelines
  */
 
-if (!defined('_ECRIRE_INC_VERSION')) return;
-
+if (!defined('_ECRIRE_INC_VERSION')) {
+	return;
+}
 
 /**
  * Déclaration des alias de tables et filtres automatiques de champs
