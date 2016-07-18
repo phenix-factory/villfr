@@ -11,6 +11,12 @@
      // Séléction du département
      var champ = $("\#champ_[(#ENV{id,#ENV{nom}}|saisie_nom2classe)]_departement");
 
+     // Si on a une valeur dans le champ département, on charge les villes automatiquement
+     var valeur = champ.val();
+     if (valeur) {
+         ajaxReload('villefr', {args: {departement: valeur}});
+     }
+
      // Quand le département change on met à jour le sélécteur de ville
      champ.on("change", function () {
          var valeur = champ.val();
