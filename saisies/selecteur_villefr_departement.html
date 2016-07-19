@@ -13,16 +13,13 @@
 
      // Si on a une valeur dans le champ département, on charge les villes automatiquement
      var valeur = champ.val();
-     if (valeur) {
-         ajaxReload('villefr', {args: {departement: valeur}});
-     }
 
      // Quand le département change on met à jour le sélécteur de ville
      champ.on("change", function () {
          var valeur = champ.val();
-         ajaxReload('villefr', {args: {departement: valeur}});
+         ajaxReload('liste_villefr', {args: {departement: valeur}});
      });
  });
 </script>
 
-<INCLURE{fond=saisies/villes_frances, env, ajax=villefr} />
+<INCLURE{fond=saisies/villes_frances, env, ajax=liste_villefr, departement=#GET{departement}} />
