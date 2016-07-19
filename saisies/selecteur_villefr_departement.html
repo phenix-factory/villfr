@@ -19,6 +19,13 @@
          var valeur = champ.val();
          ajaxReload('liste_villefr', {args: {departement: valeur}});
      });
+
+     // Fix un bug entre chosen et la fonction "Afficher_si de saisie"
+     // On relance Chosen ici pour qu'il prenne en compte les éléments caché après un envoie ajax de formulaire.
+     // Ce bug est assez étrange.
+     if (typeof spip_chosen != "undefined") {
+         spip_chosen();
+     }
  });
 </script>
 
